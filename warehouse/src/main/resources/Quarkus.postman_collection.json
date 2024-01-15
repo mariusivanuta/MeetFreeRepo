@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "3f7029fe-05c9-49cf-8b8d-1430e2d52d65",
+		"name": "Quarkus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "844244"
+	},
+	"item": [
+		{
+			"name": "POST PRODUCT",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"productName\": \"Product 1\",\r\n    \"productDescription\": \"Description of product 1\",\r\n    \"productPrice\": 1.00\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/warehouse/product",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"product"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET PRODUCT",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8080/warehouse/products/102",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"products",
+						"102"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PUT PRODUCT",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 1,\r\n        \"productName\": \"Product 1 B\",\r\n        \"productPrice\": 5.00,\r\n        \"productDescription\": \"Description 1 B\",\r\n        \"active\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/warehouse/product/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DEL PRODUCT",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/warehouse/product/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"product",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/warehouse/thirdparties",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"thirdparties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "StockMovement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/warehouse/stock_movements?productId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"stock_movements"
+					],
+					"query": [
+						{
+							"key": "productId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ThirdParty",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJjdHkiOiJKV1QiLCJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ.sxFW-sq0zlKL4RLJQbL4EIaaYVdqpih5nekZtIUrljUJeErXahpFljTvMboRFnuY4dkCU9YfSsx-95238fC-pG5CgXshLagxLw8-t4UWVrYl-qghCMbUgUlO0hV-lOduWv7dT1IC0Scd2PrN0mq4nJZzvJmi8YtYXmbfn92AhuJ5elvUuoCbFiSzYSj13MN2kX5pyRjHPRfrnuvgrJezkT6d-6-ZqOj88svnTUoWP4SA6NBgx2LCyCB09WKHq3iRcf8u1Y3ddZZ02hSBDYqZ39iz6Pfe2BpdSJmxCOiCLstM-YgAMEdevby21WSYeFy9I1VooWnOfFmKPcuvKzMzyg.Cvd-vIM7l-qeexf-.zebDtNvZONyxhNqPpE9kwBVtoUcAsJVJbe-wMbeTejXiQ_0JESAtNjp8VccHCO7a2KKFHhs-O9AKsFBeSbuxoNMSelXtVYotDGh07O3FLApFcQf75BPoHCrH8byrEXB_NjmhvgRDBl_T0Lh9UTbD7lCe58yszkdgExrIu7I93kwuVD4vm6_FNegAPiNN6w2fVbETOOO3i-f1YH4CAPHzlbcULI9Pkq0fGNP04W50sjCQ1cf1cdlB6a6OEzj4cRNsEK1iQP3U83Mqw4Z_ggpJiz3zJhvoi9WJEkUGZGp5PDmvYgcCVe2dZbniw55BXesse4b0CYPJxO0CvrZJVdn9aD0Mz7P59UAiWdVCGcS_b_uaf6uid7ub1RplW1U-0wWwJ5jYyzI7hkVClyuGbrRsLfZOjumv5EyHCmzOeKJXW5tbL_5l61A64fpYf3iVtvvrVU9QiKmMNOpdCp9TtPDiif-nbZueU5wFJyLQsMPFpzgSq6YHc2xbARWGKbJSF-5g3peZ5AK8NJiuSXEgcHzlDFdllO8Am-FQmrlIsBiTOrvtCN84VNy0wX2cpDdGOosCx4xnJJ2CO_1LCHMpRVrgjyMz6b0sAvo8XDprk5MOJl-Qb-37G-bKm5jgaoYoR-Xq1k_5TDpi5xfpi8tdFlPe81IrJNKrGHNZOZlhmD1Hht8UvAqDjEMyc8iJlATMjyVSbePP5L17NM0A8wVM2wVsTAwknXFLwERwX5KFDK5FLfv4bDtQx0v9QsmRf4URnRws5BoGSc2NHxzsrzb07WY.qSkOfYA1E8Xc8WQNVhQHPA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/warehouse/thirdparties/allThirdParties",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"thirdparties",
+						"allThirdParties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Secured",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/warehouse/secured/generateToken",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"secured",
+						"generateToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ThirdPartyAdminRole",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJjdHkiOiJKV1QiLCJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ.sxFW-sq0zlKL4RLJQbL4EIaaYVdqpih5nekZtIUrljUJeErXahpFljTvMboRFnuY4dkCU9YfSsx-95238fC-pG5CgXshLagxLw8-t4UWVrYl-qghCMbUgUlO0hV-lOduWv7dT1IC0Scd2PrN0mq4nJZzvJmi8YtYXmbfn92AhuJ5elvUuoCbFiSzYSj13MN2kX5pyRjHPRfrnuvgrJezkT6d-6-ZqOj88svnTUoWP4SA6NBgx2LCyCB09WKHq3iRcf8u1Y3ddZZ02hSBDYqZ39iz6Pfe2BpdSJmxCOiCLstM-YgAMEdevby21WSYeFy9I1VooWnOfFmKPcuvKzMzyg.Cvd-vIM7l-qeexf-.zebDtNvZONyxhNqPpE9kwBVtoUcAsJVJbe-wMbeTejXiQ_0JESAtNjp8VccHCO7a2KKFHhs-O9AKsFBeSbuxoNMSelXtVYotDGh07O3FLApFcQf75BPoHCrH8byrEXB_NjmhvgRDBl_T0Lh9UTbD7lCe58yszkdgExrIu7I93kwuVD4vm6_FNegAPiNN6w2fVbETOOO3i-f1YH4CAPHzlbcULI9Pkq0fGNP04W50sjCQ1cf1cdlB6a6OEzj4cRNsEK1iQP3U83Mqw4Z_ggpJiz3zJhvoi9WJEkUGZGp5PDmvYgcCVe2dZbniw55BXesse4b0CYPJxO0CvrZJVdn9aD0Mz7P59UAiWdVCGcS_b_uaf6uid7ub1RplW1U-0wWwJ5jYyzI7hkVClyuGbrRsLfZOjumv5EyHCmzOeKJXW5tbL_5l61A64fpYf3iVtvvrVU9QiKmMNOpdCp9TtPDiif-nbZueU5wFJyLQsMPFpzgSq6YHc2xbARWGKbJSF-5g3peZ5AK8NJiuSXEgcHzlDFdllO8Am-FQmrlIsBiTOrvtCN84VNy0wX2cpDdGOosCx4xnJJ2CO_1LCHMpRVrgjyMz6b0sAvo8XDprk5MOJl-Qb-37G-bKm5jgaoYoR-Xq1k_5TDpi5xfpi8tdFlPe81IrJNKrGHNZOZlhmD1Hht8UvAqDjEMyc8iJlATMjyVSbePP5L17NM0A8wVM2wVsTAwknXFLwERwX5KFDK5FLfv4bDtQx0v9QsmRf4URnRws5BoGSc2NHxzsrzb07WY.qSkOfYA1E8Xc8WQNVhQHPA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/warehouse/thirdparties/allThirdParties",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"thirdparties",
+						"allThirdParties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ThirdPartiesPowerUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJjdHkiOiJKV1QiLCJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ.w92qUchvOtcPYMrDIzRV3-89RpIHO1u5H5FRKlyrw3u7KnlCldqRiqaRMO-Wc4FutyaygxHiYOv2uUX8vR4IAz1GmFqnvqVXgqSSIqfcQCJ-ZjkFI38nSN67gnlj0XswE6dD35n9ONxDTVvyzVHYeUjMMmj1PZKsdIxXjC5-7z_rnS0Q-pclPa0T2BQw-zrdcHrGe0LrPUfA6ntQPqdsuRWRRF12_YXSMVFVjY8woujBKkQKTDCWYr6Mw88y39_AWFVzjPaJMWuq7VUUkHMD9g8uyXcnnl-RAeRS18if0ljM3PbJxjP4BPXA6JcMlaA0-I27U1syngfKWxgX0VWbRw.kIr6yfGYEz-KwZGK.kqwb1bhV_-u5sePHtjQkfmMGPxRWvwUpEkK2lZ-w_GX7d0dBeyJVkqDGPk0QUL6eKvQ-TezyY_9qq0KEnpvDVb8H1UhuF8-JHz6ijSMRYBgRE93ia4wpFNb_iGPAbWIM0LSg2C0GiIgVR9rMxW44zL0Pl98N-WsQYIv79y_gZuFVvE9AgP9ySqNDdVCtJh6wF9QUAviDwW5BoJEPyNd25hwpL7PDwA-Qfm-7pa9UjCXjAsOihASjK6v87EjEjnaR9npsjdSCN1dZ2YD739QHipn4kKPmIgjhI7y0VmBeAUci3Fy1gTjQI3AVe9E-qkx2scb53Cl1vzIdXODFtIwzjESJyFhD5rBM5ubiXDLaZM6vNiXn65gef7A56xEDN_y6VR21mnyNz2rzYQ-ka1LH7F_6TV64D4raz-Z171nC2crGz70NPzDZXReyibbpRZ4qTx_TqNKO0YxT5zcFMZjxapRW1hzYvTACKCWGl7R4eukxbda4v-5RyvR7k0yNepssmgkw3D9gJHmXMbG4pL0uu-7G7XlrFCfXlCjxefppYYGJekkQrTK3X7pQo2DGRsbNmXvrogET9jVr4dXmbMLpZwMeMf8tB6_za8x4FdfBGdg5wO_Gje70htLy1CzA-QUiiEVDHZ8EykBx82cjXWRh4mNlZyx_0KtUU6pxyjERHBqGeX5MZyXTHhCXK1QFyle_USse0sOwpkR_T2MGUwv1EMasNMbDdXq1H1qMDpNGe7SWx6h9ee4zJ0PMnlrdrCk.EzuepC85qmFUGOrMveYhQA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/warehouse/thirdparties/allThirdPartiesForUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"thirdparties",
+						"allThirdPartiesForUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ThirdPartiesUser",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJjdHkiOiJKV1QiLCJhbGciOiJSU0EtT0FFUCIsImVuYyI6IkEyNTZHQ00ifQ.BQgN2wk-UPbxkPNQmz_kA2Gjb4XC8xz9EctY8CtbgBK6I0lAAykMwzp3fb-KbAjouqaICcz1k6Z47d-h6mA0vhzavCMQ8Jd11A0v8wPq0_DEeJK3TMutW7dZccvd83mn2u80q95MsS-qMJeMK_jyEG8rwciZorQuJuFMvm5bWB774c_jzgdEkgp10FtRHXk8ISsgeonQ0lOpxDpqneGYX5Dsww3fuCLDknemf4--66rUzrX4faL8H1j08T0HRvuobROqBgRiftQX3XR4JmugT2xqs9ViKh05mWoCKWXGh-_ejwQSpOMPx1Ezh6A7-8n57TGEJsFrgukz7B0dlCjZaQ.gcWi0nTXDA3uF_kB.HiXyh1RWMIZHjOisT4zHETLBwCN6udZ5FJcqA7NJbX8gAORDvHJL-YV__RcDFIUSIHut0Cl4du-uxpRZFtCc5ByEZo2RccJ-v8fAnFPP-9MhifoxWkZ5cwYTwUn4gaphwj1dqFzbh4lT6eJbrU_LUeN32EiUWBO2r1VxBmvZAMwW5_dPbunBzwaS8HQHpX8P3MiUo_mO8I_M6nnRt1P0UKR8IcPnaz7nJZ9UK5GgnCV1k879QNoE-g8PVyTI2gocYtY-fbruesvQhuOXlEeZHHMXZ8Go12qn3JNQBFT_z346IUcsvljWH2ay8TMwExkNSFbgUqO1skX8AljXhfViiyfXv1iP0msExpzOZF-EaCLvoh3oJeWFMyPOYHZhtLcJu0Aq5R2FH97T1gC0dQipruVYPnH67Grrw7ADfZp-Eh7rVVl3rGmHr4UDsfMrqBbe8c1TxQAeIvMf13SVfFup-54VS_vzG31WevvbBpZqLjivTWkB5SWOPbAuHPI_Mz7LPs8o80seTRc9-IsSAouZ5zR7csNljxnm8IU4E21tIPZ5eIC57S8Ibh2x54WEafY_-i1L9uwW8-07eR18frg5teAUaKSVSy_7CkTa65gGYqVo1HGgFPG8JoIRp0mZTTsqe3TfCQPVZ-plKJtwGnQpp8OAvy29b1EwTSk66LoyHMZCTSAxfr73bdigeNPJlNXZOllwpuEI277X2H3hO8rjoGadEPDYhskGL5UDUQa8QvRzBQ.txK43F33wVSO1lkgjlB_IA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/warehouse/thirdparties/allThirdPartiesForUser",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouse",
+						"thirdparties",
+						"allThirdPartiesForUser"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
